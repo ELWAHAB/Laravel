@@ -19,7 +19,7 @@
 Route::get('/', 'Controller@index');
 
 
-Route::get('/admin', 'Controller@index2');
+//Route::get('/admin', 'Controller@index2');
 
 Route::get('/admin', 'Controller@dbToView');
 

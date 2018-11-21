@@ -1,9 +1,9 @@
 <?php
-namespace app\MyModels;
+namespace App\Models;
 
 class Admin
 {
-    private $massuv;
+    private $massuv ;
 
     public function createArray()
     {

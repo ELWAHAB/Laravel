@@ -6,9 +6,10 @@
 </head>
 <body>
     <ul>
-        @foreach($tasks as $task)
-            <li>{{ $task->body }}</li>
+        @foreach($names as $name)
+            <li>{{ $name }}</li>
         @endforeach
     </ul>
+   <?/*= $name;  */?>
 </body>
 </html>

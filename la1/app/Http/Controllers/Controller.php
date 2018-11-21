@@ -7,8 +7,10 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
+
 use Illuminate\Support\Facades\DB;
-use app\MyModels\Admin;
+
+use App\Models\Admin;
 
 
 class Controller extends BaseController
@@ -40,9 +42,12 @@ class Controller extends BaseController
     {
         $views = new Admin();
 
-        $tasks = $views->addToBD();
+//        $tasks = $views->addToBD();
 
-        return view('admin', compact('tasks'));
+        $names = $views->addToBD();
+//        $name = 1554;
+
+        return view('admin', ['names' => $names]);
     }
 
 }

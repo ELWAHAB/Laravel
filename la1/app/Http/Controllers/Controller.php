@@ -8,6 +8,8 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 use Illuminate\Support\Facades\DB;
+use app\MyModels\Admin;
+
 
 class Controller extends BaseController
 {
@@ -27,9 +29,18 @@ class Controller extends BaseController
         ]);
     }
 
-    public function dbToView()
+  /*  public function dbToView()
     {
         $tasks = DB::table('tasks')->get();
+
+        return view('admin', compact('tasks'));
+    }*/
+
+    public function dbToView()
+    {
+        $views = new Admin();
+
+        $tasks = $views->addToBD();
 
         return view('admin', compact('tasks'));
     }

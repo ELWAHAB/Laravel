@@ -7,9 +7,9 @@
 <body>
     <ul>
         @foreach($names as $name)
-            <li>{{ $name }}</li>
+            <li>{{ $name->body }}</li>
         @endforeach
     </ul>
-   <?/*= $name;  */?>
+   <?/*= $names;  */?>
 </body>
 </html>

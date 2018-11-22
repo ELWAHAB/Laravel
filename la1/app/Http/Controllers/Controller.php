@@ -42,12 +42,13 @@ class Controller extends BaseController
     {
         $views = new Admin();
 
-//        $tasks = $views->addToBD();
-
+//        $views->insertInf('Google');
         $names = $views->addToBD();
-//        $name = 1554;
 
-        return view('admin', ['names' => $names]);
+        $seconds = time();
+
+        return view('admin', ['names' => $names,
+                                    'seconds' => $seconds ]);
     }
 
 }

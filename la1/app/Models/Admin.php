@@ -2,6 +2,8 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\DB;
+use phpDocumentor\Reflection\Types\Integer;
+
 class Admin
 {
     private $massuv ;
@@ -16,12 +18,26 @@ class Admin
 
     public function addToBD()
     {
-//        $regist = DB::table('tasks')->get();
-        $regist = DB::select('SELECT body FROM tasks');
-        var_dump($regist);
-        $this->createArray();
-//        return $this->massuv;
-        return $regist;
+        $mass = $this->selectInf();
+
+        return $mass;
+    }
+
+    public function insertInf($text)
+    {
+        DB::insert("INSERT INTO tasks(body, time) VALUES (?, ?)", [$text, time()] );
+    }
+
+    public function selectInf()
+    {
+        $bodies = DB::select('SELECT body FROM tasks');
+
+        return $bodies;
+    }
+
+    public function deleteInf($id)
+    {
+        DB::delete('DELETE FROM tasks WHERE id = ?', [$id]);
     }
 
 }

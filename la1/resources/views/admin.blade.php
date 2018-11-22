@@ -10,6 +10,6 @@
             <li>{{ $name->body }}</li>
         @endforeach
     </ul>
-   <?/*= $names;  */?>
+Now : <?= $seconds; ?> seconds
 </body>
 </html>

@@ -25,7 +25,9 @@ class Admin
 
     public function insertInf($text)
     {
-        DB::insert("INSERT INTO tasks(body, time) VALUES (?, ?)", [$text, time()] );
+        $times = time();
+
+        DB::insert('INSERT INTO tasks(body, times) VALUES (?, ?)', [$text, $times] );
     }
 
     public function selectInf()

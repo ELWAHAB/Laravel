@@ -42,7 +42,11 @@ class Controller extends BaseController
     {
         $views = new Admin();
 
-//        $views->insertInf('Google');
+/*        for ($i = 2; $i <= 6; $i++ )
+        {
+            $views->deleteInf($i);
+        }*/
+
         $names = $views->addToBD();
 
         $seconds = time();

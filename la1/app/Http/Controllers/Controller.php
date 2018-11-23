@@ -45,7 +45,7 @@ class Controller extends BaseController
 
         $seconds = time();
 
-        return view('admin', ['names' => $names,
+        return view('tasks.admin', ['names' => $names,
                                     'seconds' => $seconds ]);
     }
 
@@ -53,32 +53,25 @@ class Controller extends BaseController
     {
         $views = new Admin();
 
-        $bodys = 'id';
+        $colomns = 'body';
 
-        $names = $views->selectInf($bodys);
+        /*for ($i = 1; $i<= 6; $i++)
+        {
+            $views->updateInf('Page #'.$i, $i);
+        }*/
+
+
+        $names = $views->selectInf($colomns);
 
         return view('home', [ 'infs' => $names,
-                                    'justInf' => $bodys ]);
+                                    'justInf' => $colomns ]);
     }
 
     public function dbInf($id)
     {
-        $views = new Admin();
-
-/*        for ($i = 2; $i <= 6; $i++ )
-                {
-                    $views->deleteInf($i);
-                }*/
-
-        $names = $views->addToBD();
-
-        $seconds = time();
-
         $task = DB::table('tasks')->find($id);
-
-        dd($task);
-        return view('admin', ['names' => $names,
-                                    'seconds' => $seconds ]);
+//        dd($task);
+        return view('tasks.show', compact('task'));
     }
 
 }

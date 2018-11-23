@@ -10,5 +10,6 @@
         <li><?=$justInf; ?> is  {{ $inf->$justInf }}</li>
     @endforeach
 </ul>
+<a href="admin">Admin page</a>
 </body>
 </html>

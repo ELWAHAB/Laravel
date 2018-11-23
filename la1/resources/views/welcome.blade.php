@@ -33,6 +33,11 @@
             .title {
                 font-size: 96px;
             }
+
+            .urls {
+                text-align: right;
+                display: inline-block;
+            }
         </style>
     </head>
     <body>
@@ -40,6 +45,9 @@
             <div class="content">
                 <div class="title">♥ like programming</div>
             </div>
+        </div>
+        <div class="urls">
+            <a href="admin"> Admin Page</a>
         </div>
     </body>
 </html>

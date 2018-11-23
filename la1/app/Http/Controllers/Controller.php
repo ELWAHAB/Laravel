@@ -31,7 +31,7 @@ class Controller extends BaseController
         ]);
     }
 
-    public function dbToView()
+    public function dbAdmin()
     {
         $views = new Admin();
 
@@ -40,7 +40,7 @@ class Controller extends BaseController
                     $views->insertInf($i);
                 }*/
 
-       $bodys = 'body';
+        $bodys = '*';
         $names = $views->selectInf($bodys);
 
         $seconds = time();
@@ -67,7 +67,7 @@ class Controller extends BaseController
                                     'justInf' => $colomns ]);
     }
 
-    public function dbInf($id)
+    public function dbAdminInf($id)
     {
         $task = DB::table('tasks')->find($id);
 //        dd($task);

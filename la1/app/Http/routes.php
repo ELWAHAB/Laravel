@@ -16,14 +16,14 @@
 //});
 
 
-Route::get('/', 'Controller@index');
+Route::get('/welcome', 'Controller@index');
 
 
 //Route::get('/admin', 'Controller@index2');
 
-Route::get('/admin', 'Controller@dbToView');
+Route::get('/admin', 'Controller@dbAdmin');
 
-Route::get('/admin/{id}', 'Controller@dbInf');
+Route::get('/admin/{id}', 'Controller@dbAdminInf');
 
 Route::get('/home', 'Controller@dbHome');
 

@@ -24,10 +24,6 @@ Route::get('/', 'Controller@index');
 Route::get('/admin', 'Controller@dbToView');
 
 Route::get('/admin/{id}', 'Controller@dbInf');
-/*Route::get('/admin/{id}', function ($id){
-    $task = \Illuminate\Support\Facades\DB::table('tasks')->find($id);
-    return view('tasks.show', compact('task'));
-});*/
 
 Route::get('/home', 'Controller@dbHome');
 

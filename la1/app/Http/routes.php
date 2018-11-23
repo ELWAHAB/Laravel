@@ -23,6 +23,10 @@ Route::get('/', 'Controller@index');
 
 Route::get('/admin', 'Controller@dbToView');
 
+Route::get('/admin/{task}', 'Controller@dbInf');
+
+Route::get('/home', 'Controller@dbHome');
+
 
 
 

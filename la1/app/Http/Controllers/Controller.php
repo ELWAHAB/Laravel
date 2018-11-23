@@ -31,26 +31,52 @@ class Controller extends BaseController
         ]);
     }
 
-  /*  public function dbToView()
-    {
-        $tasks = DB::table('tasks')->get();
-
-        return view('admin', compact('tasks'));
-    }*/
-
     public function dbToView()
     {
         $views = new Admin();
 
+       /* for ($i = 1; $i <= 6; $i++ )
+                {
+                    $views->insertInf($i);
+                }*/
+
+       $bodys = 'body';
+        $names = $views->selectInf($bodys);
+
+        $seconds = time();
+
+        return view('admin', ['names' => $names,
+                                    'seconds' => $seconds ]);
+    }
+
+    public function dbHome()
+    {
+        $views = new Admin();
+
+        $bodys = 'id';
+
+        $names = $views->selectInf($bodys);
+
+        return view('home', [ 'infs' => $names,
+                                    'justInf' => $bodys ]);
+    }
+
+    public function dbInf($id)
+    {
+        $views = new Admin();
+
 /*        for ($i = 2; $i <= 6; $i++ )
-        {
-            $views->deleteInf($i);
-        }*/
+                {
+                    $views->deleteInf($i);
+                }*/
 
         $names = $views->addToBD();
 
         $seconds = time();
 
+        $task = DB::table('tasks')->find($id);
+
+        dd($task);
         return view('admin', ['names' => $names,
                                     'seconds' => $seconds ]);
     }

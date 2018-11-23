@@ -30,9 +30,9 @@ class Admin
         DB::insert('INSERT INTO tasks(body, times) VALUES (?, ?)', [$text, $times] );
     }
 
-    public function selectInf()
+    public function selectInf($bodys)
     {
-        $bodies = DB::select('SELECT body FROM tasks');
+        $bodies = DB::select('SELECT '.$bodys.' FROM tasks');
 
         return $bodies;
     }
@@ -42,6 +42,10 @@ class Admin
         DB::delete('DELETE FROM tasks WHERE id = ?', [$id]);
     }
 
+    public function updateInf(string $bodys, int $id)
+    {
+
+    }
 }
 
 ?>

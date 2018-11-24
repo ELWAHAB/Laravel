@@ -11,7 +11,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Admin;
-
+use App\Task as Task;
+use App\Item as Item;
 
 class Controller extends BaseController
 {
@@ -35,14 +36,16 @@ class Controller extends BaseController
     {
         $views = new Admin();
 
-       /* for ($i = 1; $i <= 6; $i++ )
+        /*for ($i = 1; $i <= 6; $i++ )
                 {
-                    $views->insertInf($i);
+                    $views->insertInf('Task '.$i);
                 }*/
 
         $bodys = '*';
-        $names = $views->selectInf($bodys);
+//        $names = $views->selectInf($bodys);
+//        $names = Item::incomplete();
 
+        $names = Task::all();
         $seconds = time();
 
         return view('tasks.admin', ['names' => $names,
@@ -63,8 +66,8 @@ class Controller extends BaseController
 
         $names = $views->selectInf($colomns);
 
-        return view('home', [ 'infs' => $names,
-                                    'justInf' => $colomns ]);
+        return view('home', ['infs' => $names,
+            'justInf' => $colomns]);
     }
 
     public function dbAdminInf($id)
@@ -75,3 +78,4 @@ class Controller extends BaseController
     }
 
 }
+

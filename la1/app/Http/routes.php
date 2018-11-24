@@ -18,6 +18,7 @@
 
 Route::get('/welcome', 'Controller@index');
 
+Route::get('/items1', 'ItemsController@show');
 
 //Route::get('/admin', 'Controller@index2');
 
@@ -27,7 +28,13 @@ Route::get('/admin/{id}', 'Controller@dbAdminInf');
 
 Route::get('/home', 'Controller@dbHome');
 
+// this routes for Post
+
+Route::get('/', 'PostsController@index');
+
+Route::get('/posts/{post}', 'PostsController@show');
 
 
+Route::auth();
 
-
+Route::get('/home', 'HomeController@index');
